@@ -1,0 +1,99 @@
+<app-title title="Defer Options "/>
+
+<section>
+  <h1 class="text-xl">Interacciones</h1>
+  <hr class="my-2">
+
+  @defer (on interaction ) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+      <span>On Interaction 🍃</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100 text-center">
+      click on me...
+    </div>
+  }
+
+</section>
+
+
+<section>
+  <hr class="my-2">
+
+  <button
+    #btnInteraction
+    class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+    Click me!
+  </button>
+
+  @defer (on interaction( btnInteraction ) ) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+      <span>On Interaction 🍃</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100 text-center">
+      Placeholder div
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer (on hover ) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+      <span>On hover 🍃</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100 text-center">
+      Placeholder div
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer (on immediate ) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+      <span>On immediate 🍃</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100 text-center">
+      Placeholder div
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer ( on timer( 3000 ) ) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+      <span>On timer 🍃</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100 text-center">
+      Se disparara despues de 3 segundos...
+    </div>
+  }
+
+</section>
+
+<section>
+  <hr class="my-2">
+
+  @defer ( on hover; prefetch on idle ) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+      <span>On hover, idle 🍃</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100 text-center">
+      Se disparara 2 triggers a la vez
+    </div>
+  }
+
+</section>

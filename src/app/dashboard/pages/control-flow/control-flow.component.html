@@ -1,0 +1,72 @@
+
+  <app-title title="Control Flow" withshadow />
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <!-- @if -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h3 class="text-2xl font-bold mb-5"> if: {{ showControl() }} </h3>
+
+    <button (click)="toogleContent()"
+      class="bg-blue-500 rounded text-white p-2">
+      click me...
+    </button>
+    @if (showControl()) {
+      <p>Hello world</p>
+    }@else {
+      <p>***********</p>
+    }
+
+  </div>
+
+  <!-- @switch -->
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-3xl"> {{grade()}} </h2>
+
+    @switch (grade()) {
+      @case ('A') {
+        <p>Arriba de los 90</p>
+      }
+      @case ('B') {
+        <p>Arriba de los 80</p>
+      }
+      @default {
+        <p>Reprobado</p>
+      }
+     }
+
+  </div>
+
+  <!-- @for -->
+  <div class="bg-white rounded shadow p-10">
+
+    <ul>
+        @for (fremawork of frameWorks(); track frameWorks;
+             let i = $index, first = $first, last = $last, even = $even, odd = $odd, count = $count ) {
+          <li [class]="{
+            'bg-red-100': even && !first && !last,
+            'bg-purple-100': odd && !first && !last,
+            'bg-blue-100': first || last,
+          }">
+            {{ i + 1 }}/{{ count }} - {{ fremawork }}
+          </li>
+        }
+    </ul>
+
+  </div>
+  <div class="bg-white rounded shadow p-10">
+
+    <ul>
+        @for (fremawork of frameWorks2(); track $index) {
+          <li>
+            {{ fremawork }}
+          </li>
+        }@empty {
+          NO hay frameworks agregados
+        }
+    </ul>
+
+  </div>
+
+</section>
+
