@@ -27,6 +27,11 @@ export const routes: Routes = [
           loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component'),
         },
         {
+          path: 'input-output',
+          title: 'Listado de Productos',
+          loadComponent: () => import('./dashboard/pages/input-output/input-output.component'),
+        },
+        {
           path: 'user/:id',
           title: 'user view',
           loadComponent: () => import('./dashboard/pages/user/user.component'),
@@ -45,6 +50,11 @@ export const routes: Routes = [
           path: 'view-transition-2',
           title: 'View transition 2',
           loadComponent: () => import('./dashboard/pages/view-transition/view-transition2.component'),
+        },
+        {
+          path: 'material',
+          title: 'A-Material',
+          loadComponent: () => import('./dashboard/pages/material/material.component'),
         },
         {
           path: '',
